@@ -48,7 +48,7 @@ class Augment:
         return rotated
     
     def generate_rotations(self, sentence, n=3,  informed=False, max_rotations=100, flexible=None):
-        """_summary_
+        """Generate rotations for input sentence.
 
         Args:
             sentence (Sentence): Sentence object to rotate
@@ -122,7 +122,7 @@ class Augment:
         return crops
     
     def generate_nonce(self, sentence, p=0.5, strict=False):
-        """_summary_
+        """Generate sentences with replacement.
 
         Args:
             sentence (Sentence): Sentence to do replacements in.
