@@ -59,3 +59,7 @@ experiments:
             p: 0.3
             strict: True
 ```
+
+## Evaluation
+Run the script `eval.py`. Per default, it reads all file in the directory `predictions/` and evaluates them with respect to the gold data in the file `corpora/data-26k/de_gsd-ud-test.conllu`. <br>
+It prints out a table wit the name of the experiment, the LAS score and the UAS score. Via the option `--sort_by`, these can be sorted by name, LAS or UAS.
