@@ -1,0 +1,175 @@
+input: 
+  dir: corpora/data-26k/
+  train: de_gsd-ud-train.conllu
+  test: de_gsd-ud-test.conllu
+  val: de_gsd-ud-dev.conllu
+
+output: augmented-data/
+
+experiments:
+
+  crop-p.3-no_restriction:
+    crop:
+      p: 0.3
+      relations: False
+  
+  crop-p.3-restricted:
+    crop:
+      p: 0.3
+      relations:
+        - "iobj"
+        - "obj"
+        - "advmod"
+  
+  crop-p.5-no_restriction:
+    crop:
+      p: 0.5
+      relations: False
+  
+  crop-p.5-restricted:
+    crop:
+      p: 0.5
+      relations:
+        - "iobj"
+        - "obj"
+        - "advmod"
+  
+  rotate-n2-informed:
+    rotate:
+      n: 2
+      informed: True
+      flexible: 
+        - "nsubj"
+        - "obj"
+        - "iobj"
+        - "advmod"
+
+  rotate-n3-informed:
+    rotate:
+      n: 3
+      informed: True
+      flexible: 
+        - "nsubj"
+        - "obj"
+        - "iobj"
+        - "advmod"
+
+  rotate-n4-informed:
+    rotate:
+      n: 4
+      informed: True
+      flexible: 
+        - "nsubj"
+        - "obj"
+        - "iobj"
+        - "advmod"
+
+  rotate-n2-uninformed:
+    rotate:
+      n: 2
+      informed: False
+      flexible: 
+        - "nsubj"
+        - "obj"
+        - "iobj"
+        - "advmod"
+
+  rotate-n3-uninformed:
+    rotate:
+      n: 3
+      informed: False
+      flexible: 
+        - "nsubj"
+        - "obj"
+        - "iobj"
+        - "advmod"
+
+  rotate-n4-uninformed:
+    rotate:
+      n: 4
+      informed: True
+      flexible: 
+        - "nsubj"
+        - "obj"
+        - "iobj"
+        - "advmod"
+  
+  nonce-p.3-strict:
+    nonce:
+      p: 0.3
+      strict: True
+  
+  nonce-p.3-not_strict:
+    nonce:
+      p: 0.3
+      strict: False
+  
+  nonce-p.5-strict:
+    nonce:
+      p: 0.5
+      strict: True
+  
+  nonce-p.5-not_strict:
+    nonce:
+      p: 0.5
+      strict: False
+  
+  comb-rot-crop-nonce:
+    rotate:
+      n: 2
+      informed: True
+      flexible:
+        - "nsubj"
+        - "obj"
+        - "iobj"
+        - "advmod"
+    crop:
+      p: 0.3
+      relations:
+        - "iobj"
+        - "obj"
+        - "advmod"
+    nonce:
+      p: 0.3
+      strict: True
+  
+  comb-rot-crop:
+    rotate:
+      n: 2
+      informed: True
+      flexible:
+        - "nsubj"
+        - "obj"
+        - "iobj"
+        - "advmod"
+    crop:
+      p: 0.3
+      relations:
+        - "iobj"
+        - "obj"
+        - "advmod"
+  
+  comb-rot-nonce:
+    rotate:
+      n: 2
+      informed: True
+      flexible:
+        - "nsubj"
+        - "obj"
+        - "iobj"
+        - "advmod"
+    nonce:
+      p: 0.3
+      strict: True
+  
+  comb-crop-nonce:
+    crop:
+      p: 0.3
+      relations:
+        - "iobj"
+        - "obj"
+        - "advmod"
+    nonce:
+      p: 0.3
+      strict: True
+
