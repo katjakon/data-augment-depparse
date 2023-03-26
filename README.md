@@ -12,6 +12,15 @@ tabulate 0.9.0
 tqdm 4.65.0 
 ```
 
+## Directory Structure
+
+- `predictions/` contains the predictions on the test set made by the MaltParser trained on different augmented data sets.
+- `corpora/data-26K` contains the down sampled corpus
+- `augment/` contains the code used for augmenting the data
+- `experiments.yaml` contains the paramter specifications for running different experiment. See Section Usage for more information.
+- Run `main.py` to augment the data according to the experiments specified in `experiments.yaml`
+- Run `eval.py` to evaluate the predictions made by the MaltParser models.
+
 ## Usage
 All configurations for generating new augmented data can be adjusted in the file `experiments.yaml`<br>
 
@@ -50,5 +59,3 @@ experiments:
             p: 0.3
             strict: True
 ```
-
-
