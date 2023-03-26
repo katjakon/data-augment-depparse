@@ -1,9 +1,4 @@
-input: 
-  dir: corpora/data-26k/
-  train: de_gsd-ud-train.conllu
-  test: de_gsd-ud-test.conllu
-  val: de_gsd-ud-dev.conllu
-
+input: corpora/data-26k/de_gsd-ud-train.conllu
 output: augmented-data/
 
 experiments:
